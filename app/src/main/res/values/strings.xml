@@ -2,5 +2,8 @@
     <string name="app_name">Mechanical App</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="title_activity_login">FullscreenActivity</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="title_activity_select_user_type">FullscreenActivity</string>
 </resources>
