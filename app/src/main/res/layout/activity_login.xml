@@ -7,84 +7,84 @@
     android:theme="@style/ThemeOverlay.MechanicalApp.FullscreenContainer"
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:src="@drawable/logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="90dp"/>
-
-    <RelativeLayout
-        android:id="@+id/credentials_layout"
-        android:layout_marginTop="340dp"
-        android:layout_marginHorizontal="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:hint="@string/email_label"
-            android:autofillHints="@string/email_label"
-            android:inputType="textEmailAddress"/>
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_below="@id/email"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:hint="@string/password_label"
-            android:autofillHints="@string/password_label"
-            android:inputType="textPassword"/>
-
-        <CheckBox
-            android:layout_below="@+id/password"
-            android:id="@+id/keep_logged_check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Keep me logged in"/>
-
-    </RelativeLayout>
-
     <Button
         android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@+id/credentials_layout"
-        android:layout_marginTop="50dp"
         android:layout_marginHorizontal="60dp"
-        android:text="LOG IN"/>
+        android:layout_marginTop="50dp"
+        android:text="LOG IN" />
 
-    <TextView
+    <ImageView
+        android:layout_width="240dp"
+        android:layout_height="240dp"
         android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Sign Up"/>
+        android:layout_marginTop="90dp"
+        android:src="@drawable/logo" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp">
 
         <TextView
             android:id="@+id/forgot_password_txt"
-            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forgot passoword?"/>
+            android:layout_centerHorizontal="true"
+            android:text="Forgot passoword?" />
 
         <TextView
             android:id="@+id/forgot_password_btn"
-            android:layout_toRightOf="@id/forgot_password_txt"
-            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Click Here"/>
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/forgot_password_txt"
+            android:text="Click Here" />
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/credentials_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="340dp">
+
+        <CheckBox
+            android:id="@+id/keep_logged_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            android:text="Keep me logged in" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/email"
+            android:autofillHints="@string/password_label"
+            android:hint="@string/password_label"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:autofillHints="@string/email_label"
+            android:hint="@string/email_label"
+            android:inputType="textEmailAddress" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Sign Up" />
 
 </RelativeLayout>

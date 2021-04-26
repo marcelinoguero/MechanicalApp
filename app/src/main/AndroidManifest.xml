@@ -10,10 +10,47 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MechanicalApp">
         <activity
+            android:name=".NavActivity"
+            android:label="@string/title_activity_nav"
+            android:theme="@style/Theme.MechanicalApp.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps">
+        </activity>
+        <activity
+            android:name=".VehiclesListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_cars_list"
+            android:theme="@style/Theme.MechanicalApp.Fullscreen" />
+        <activity
+            android:name=".DriverResgisterActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="title_activity_driver_resgister"
+            android:theme="@style/Theme.MechanicalApp.Fullscreen" />
+        <activity
+            android:name=".VehicleRegisterActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="title_activity_vehicle_resgister"
+            android:theme="@style/Theme.MechanicalApp.Fullscreen" />
+        <activity
             android:name=".SelectUserTypeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_select_user_type"
-            android:theme="@style/Theme.MechanicalApp.Fullscreen"></activity>
+            android:theme="@style/Theme.MechanicalApp.Fullscreen" />
         <activity
             android:name=".LoginActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -23,13 +60,13 @@
             android:name=".FullscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:theme="@style/Theme.MechanicalApp.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/Theme.MechanicalApp.Fullscreen" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
     </application>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>

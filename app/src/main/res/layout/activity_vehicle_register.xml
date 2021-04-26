@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:theme="@style/ThemeOverlay.MechanicalApp.FullscreenContainer"
+    tools:context=".DriverResgisterActivity">
+
+    <RelativeLayout
+        android:id="@+id/screen_header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#1A3330">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/arrow_back_button" />
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="60dp"
+            android:src="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/user_icon"
+            android:text="Cadastro Veícular"
+            android:textColor="#FFFF"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="490dp"
+        android:layout_below="@+id/screen_header">
+
+        <RelativeLayout
+            android:id="@+id/driver_credentials"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome do veículo"
+                android:textStyle="bold"
+                android:layout_marginBottom="-15dp"
+                android:layout_above="@+id/name"/>
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marca"
+                android:textStyle="bold"
+                android:layout_marginBottom="-15dp"
+                android:layout_above="@+id/email"/>
+
+<!--            <EditText-->
+<!--                android:id="@+id/email"-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_below="@id/phone_number"-->
+<!--                android:hint="email@email.com.br"-->
+<!--                android:inputType="textEmailAddress"-->
+<!--                android:layout_marginTop="15dp" />-->
+
+            <Spinner
+                android:id="@+id/email"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/phone_number"
+                android:layout_marginTop="15dp"
+                android:spinnerMode="dropdown"
+                android:entries="@array/marks"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modelo"
+                android:textStyle="bold"
+                android:layout_marginBottom="-15dp"
+                android:layout_above="@+id/password"
+                android:layout_alignStart="@id/password"/>
+
+            <Spinner
+                android:id="@+id/password"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/phone_number"
+                android:layout_marginTop="15dp"
+                android:spinnerMode="dropdown"
+                android:entries="@array/marks" />;
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Placa (Opcional)"
+                android:textStyle="bold"
+                android:layout_marginBottom="-15dp"
+                android:layout_above="@+id/phone_number"/>
+
+            <LinearLayout
+                android:id="@+id/phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name"
+                android:layout_marginTop="15dp">
+
+                <EditText
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:hint="XXXXX" />
+
+                <EditText
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:hint="XXXX" />
+            </LinearLayout>;
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main_layout"
+        android:background="#1A3330">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="50dp"
+            android:text="Confirmar" />
+    </RelativeLayout>
+
+</RelativeLayout>
