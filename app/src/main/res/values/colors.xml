@@ -12,4 +12,10 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+    <color name="default_dark_background_color">#2C2C2C</color>
+    <color name="default_dark_background_color2">#1C1C1C</color>
+    <color name="default_button_color">#171717</color>
+    <color name="default_detail_color">#4EB5A9</color>
+    <color name="default_card_background_color">#424242</color>
+    <color name="default_card_background_border_color">#BDBDBD</color>
 </resources>

@@ -5,26 +5,230 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="end">
-
-    <RelativeLayout
-        android:id="@+id/nav_view"
-        android:layout_gravity="end"
-        android:layout_width="350dp"
-        android:layout_height="match_parent"
-        android:background="#000000">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="XV"/>
-
-    </RelativeLayout>
+    tools:openDrawer="end" >
 
     <include
         layout="@layout/activity_maps"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/nav_view"
+        android:layout_gravity="end"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="#000000">
+
+        <RelativeLayout
+            android:id="@+id/screen_header"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#1A3330">
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:rotation="180"
+                android:src="@drawable/arrow_back_button"
+                android:id="@+id/back_arrow_button"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/vehicle_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40dp"
+                android:src="@drawable/vehicle_icon" />
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/vehicle_icon"
+                android:text="Mecânicos Próximos"
+                android:textColor="#FFFF"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/vehicle_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="0dp"
+            android:layout_below="@+id/screen_header"
+            android:layout_above="@+id/screen_bottom">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/vehicle_on_vehicles_list_bg">
+
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="35dp"
+                        android:text="E" />
+
+                    <TextView
+                        android:id="@+id/vehicle_mark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_toRightOf="@id/vehicle_brand"
+                        android:text="Volkswagen"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_toRightOf="@id/vehicle_mark"
+                        android:text="Gol G5"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/vehicle_brand"
+                        android:text="Meu Carro"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/vehicle_brand"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:background="#000000" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/vehicle_on_vehicles_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/vehicle_on_vehicles_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/vehicle_on_vehicles_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/vehicle_on_vehicles_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/vehicle_on_vehicles_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/vehicle_on_vehicles_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/vehicle_on_vehicles_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/vehicle_on_vehicles_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/vehicle_on_vehicles_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/vehicle_on_vehicles_list_bg" />
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/screen_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#1A3330"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/num_mechanics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15"
+                android:layout_marginLeft="15dp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_toRightOf="@+id/num_mechanics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="Mecânicos Próximos"
+                android:textColor="#FFFF"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

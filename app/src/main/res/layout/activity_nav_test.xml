@@ -1,0 +1,268 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/default_dark_background_color2" />
+
+    <ImageButton
+        android:id="@+id/btnTeste"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:tint="#FFFFFFFF"
+        android:background="@drawable/back_to_profile_icon"
+        android:layout_marginTop="7dp"
+        android:scaleType="fitCenter"
+        android:elevation="1dp"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/double_arrow_icon"
+        android:layout_marginTop="7dp"
+        android:scaleType="fitCenter"
+        android:elevation="1dp"/>
+
+    <RelativeLayout
+        android:id="@+id/nav_view"
+        android:layout_gravity="end"
+        android:layout_below="@id/card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/vehicle_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="0dp"
+            android:layout_above="@id/screen_bottom">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/card_on_list_bg">
+
+                    <ImageButton
+                        android:id="@+id/call_button"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="35dp"
+                        android:background="@drawable/call_service_icon"
+                        android:scaleType="fitCenter"/>
+
+                    <TextView
+                        android:id="@+id/vehicle_mark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="35dp"
+                        android:layout_toRightOf="@id/vehicle_brand"
+                        android:textColor="@color/white"
+                        android:text="Mecânico"
+                        android:textSize="15sp" />
+
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="45dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_below="@id/vehicle_mark"
+                        android:layout_toRightOf="@id/vehicle_brand"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:numStars="5"
+                        android:rating="5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@id/vehicle_brand"
+                        android:text="Jonas"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/vehicle_brand"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/default_user_profile" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/card_on_list_bg">
+
+                    <ImageButton
+                        android:id="@+id/call_button1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="35dp"
+                        android:background="@drawable/call_service_icon"
+                        android:scaleType="fitCenter"/>
+
+                    <TextView
+                        android:id="@+id/vehicle_mark1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="35dp"
+                        android:layout_toRightOf="@id/vehicle_brand1"
+                        android:textColor="@color/white"
+                        android:text="Oficina Mêcanica"
+                        android:textSize="15sp" />
+
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="45dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_below="@id/vehicle_mark1"
+                        android:layout_toRightOf="@id/vehicle_brand1"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:numStars="5"
+                        android:rating="5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@id/vehicle_brand1"
+                        android:text="Auto Center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/vehicle_brand1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/default_user_profile" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/card_on_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/card_on_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/card_on_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/card_on_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/card_on_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/card_on_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/card_on_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/card_on_list_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/card_on_list_bg" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/screen_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/default_dark_background_color"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/vehicle_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/mechanic_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="Mecânicos Próximos"
+                android:textColor="#FFFF"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

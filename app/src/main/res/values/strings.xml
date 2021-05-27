@@ -4,7 +4,7 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_login">FullscreenActivity</string>
     <string name="email_label">Email</string>
-    <string name="password_label">Password</string>
+    <string name="password_label">Senha</string>
     <string name="title_activity_select_user_type">FullscreenActivity</string>
     <string name="title_activity_driver_resgister">FullscreenActivity</string>
     <string name="title_activity_cars_list">CarsListActivity</string>

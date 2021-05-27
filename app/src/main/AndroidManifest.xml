@@ -9,28 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MechanicalApp">
+        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".FreelanceMechanicProfileActivity" />
+        <activity android:name=".MechanicWorkshopProfileActivity" />
+        <activity android:name=".AssociatedMechanicProfileActivity" />
+        <activity android:name=".DriverProfileActivity" />
+        <activity android:name=".NavTestActivity" />
         <activity
             android:name=".NavActivity"
             android:label="@string/title_activity_nav"
-            android:theme="@style/Theme.MechanicalApp.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
+            android:theme="@style/Theme.MechanicalApp.NoActionBar" />
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps">
-        </activity>
+            android:name=".DriverMapsActivity"
+            android:label="@string/title_activity_maps"></activity>
         <activity
             android:name=".VehiclesListActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -55,7 +46,13 @@
             android:name=".LoginActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_login"
-            android:theme="@style/Theme.MechanicalApp.Fullscreen" />
+            android:theme="@style/Theme.MechanicalApp.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".FullscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -66,7 +63,17 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
     </application>
+    <compatible-screens>
+        <screen
+            android:screenDensity="420"
+            android:screenSize="small" />
+    </compatible-screens>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
 
 </manifest>

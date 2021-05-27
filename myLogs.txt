@@ -1,0 +1,77 @@
+Starting a Gradle Daemon, 11 busy and 9 stopped Daemons could not be reused, use --status for details
+Starting a Gradle Daemon, 12 busy and 9 stopped Daemons could not be reused, use --status for details
+Starting a Gradle Daemon, 13 busy and 9 stopped Daemons could not be reused, use --status for details
+Starting a Gradle Daemon, 14 busy and 9 stopped Daemons could not be reused, use --status for details
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Unable to start the daemon process.
+This problem might be caused by incorrect configuration of the daemon.
+For example, an unrecognized jvm option is used.
+Please refer to the User Manual chapter on the daemon at https://docs.gradle.org/6.5/userguide/gradle_daemon.html
+Process command line: C:\Program Files\Java\jdk1.8.0_111\bin\java.exe -Xmx2048m -Dfile.encoding=UTF-8 -Duser.country=BR -Duser.language=pt -Duser.variant -cp C:\Users\marns\.gradle\wrapper\dists\gradle-6.5-all\2oz4ud9k3tuxjg84bbf55q0tn\gradle-6.5\lib\gradle-launcher-6.5.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 6.5
+Please read the following process output to find out more:
+-----------------------
+Error occurred during initialization of VM
+Unable to allocate 65536KB bitmaps for parallel garbage collection for the requested 2097152KB heap.
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+
+
+* Try:
+Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Exception is:
+org.gradle.api.GradleException: Unable to start the daemon process.
+This problem might be caused by incorrect configuration of the daemon.
+For example, an unrecognized jvm option is used.
+Please refer to the User Manual chapter on the daemon at https://docs.gradle.org/6.5/userguide/gradle_daemon.html
+Process command line: C:\Program Files\Java\jdk1.8.0_111\bin\java.exe -Xmx2048m -Dfile.encoding=UTF-8 -Duser.country=BR -Duser.language=pt -Duser.variant -cp C:\Users\marns\.gradle\wrapper\dists\gradle-6.5-all\2oz4ud9k3tuxjg84bbf55q0tn\gradle-6.5\lib\gradle-launcher-6.5.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 6.5
+Please read the following process output to find out more:
+-----------------------
+Error occurred during initialization of VM
+Unable to allocate 65536KB bitmaps for parallel garbage collection for the requested 2097152KB heap.
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+
+	at org.gradle.launcher.daemon.client.DaemonGreeter.parseDaemonOutput(DaemonGreeter.java:38)
+	at org.gradle.launcher.daemon.client.DefaultDaemonStarter.startProcess(DefaultDaemonStarter.java:176)
+	at org.gradle.launcher.daemon.client.DefaultDaemonStarter.startDaemon(DefaultDaemonStarter.java:137)
+	at org.gradle.launcher.daemon.client.DefaultDaemonConnector.doStartDaemon(DefaultDaemonConnector.java:217)
+	at org.gradle.launcher.daemon.client.DefaultDaemonConnector.startDaemon(DefaultDaemonConnector.java:211)
+	at org.gradle.launcher.daemon.client.DefaultDaemonConnector.connect(DefaultDaemonConnector.java:133)
+	at org.gradle.launcher.daemon.client.DaemonClient.execute(DaemonClient.java:145)
+	at org.gradle.launcher.daemon.client.DaemonClient.execute(DaemonClient.java:99)
+	at org.gradle.launcher.cli.RunBuildAction.run(RunBuildAction.java:56)
+	at org.gradle.internal.Actions$RunnableActionAdapter.execute(Actions.java:212)
+	at org.gradle.launcher.cli.DefaultCommandLineActionFactory$ParseAndBuildAction.execute(DefaultCommandLineActionFactory.java:294)
+	at org.gradle.launcher.cli.DefaultCommandLineActionFactory$ParseAndBuildAction.execute(DefaultCommandLineActionFactory.java:266)
+	at org.gradle.launcher.cli.DebugLoggerWarningAction.execute(DebugLoggerWarningAction.java:82)
+	at org.gradle.launcher.cli.DebugLoggerWarningAction.execute(DebugLoggerWarningAction.java:30)
+	at org.gradle.launcher.cli.WelcomeMessageAction.execute(WelcomeMessageAction.java:92)
+	at org.gradle.launcher.cli.WelcomeMessageAction.execute(WelcomeMessageAction.java:38)
+	at org.gradle.launcher.cli.NativeServicesInitializingAction.execute(NativeServicesInitializingAction.java:44)
+	at org.gradle.launcher.cli.NativeServicesInitializingAction.execute(NativeServicesInitializingAction.java:26)
+	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:41)
+	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:26)
+	at org.gradle.launcher.cli.DefaultCommandLineActionFactory$WithLogging.execute(DefaultCommandLineActionFactory.java:259)
+	at org.gradle.launcher.Main.doAction(Main.java:35)
+	at org.gradle.launcher.bootstrap.EntryPoint.run(EntryPoint.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.launcher.bootstrap.ProcessBootstrap.runNoExit(ProcessBootstrap.java:60)
+	at org.gradle.launcher.bootstrap.ProcessBootstrap.run(ProcessBootstrap.java:37)
+	at org.gradle.launcher.GradleMain.main(GradleMain.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.wrapper.BootstrapMainStarter.start(BootstrapMainStarter.java:31)
+	at org.gradle.wrapper.WrapperExecutor.execute(WrapperExecutor.java:108)
+	at org.gradle.wrapper.GradleWrapperMain.main(GradleWrapperMain.java:61)
+
+
+* Get more help at https://help.gradle.org
