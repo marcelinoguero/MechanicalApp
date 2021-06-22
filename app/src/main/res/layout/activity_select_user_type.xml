@@ -5,23 +5,43 @@
     android:layout_height="match_parent"
     android:background="?attr/fullscreenBackgroundColor"
     android:theme="@style/ThemeOverlay.MechanicalApp.FullscreenContainer"
-    tools:context=".SelectUserTypeActivity">
+    tools:context=".SelectUserTypeActivity"
+    android:backgroundTint="@color/default_card_background_color">
 
-    <Button
-        android:id="@+id/login_btn"
+    <RelativeLayout
+        android:id="@+id/screen_header"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/user_type_options"
-        android:layout_marginHorizontal="60dp"
-        android:layout_marginTop="30dp"
-        android:text="NEXT" />
-
-    <ImageView
-        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/logo" />
+        android:background="@color/default_dark_background_color">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/arrow_back_button"
+            android:id="@+id/back_btn"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="60dp"
+            android:src="@drawable/user_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/user_icon"
+            android:text="Cadastro Pessoal"
+            android:textColor="#FFFF"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/user_type_options"
@@ -33,18 +53,19 @@
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:id="@+id/type_group">
 
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:background="@drawable/type_select_layout_bg"
                 android:button="@drawable/radio_button_inset"
-                android:buttonTint="@color/cardview_light_background"
-                android:checked="true"
                 android:paddingLeft="20sp"
                 android:text="Motorista"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:id="@+id/driver_radio" />
 
             <RadioButton
                 android:layout_width="match_parent"
@@ -52,10 +73,11 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/type_select_layout_bg"
                 android:button="@drawable/radio_button_inset"
-                android:buttonTint="@color/cardview_light_background"
                 android:paddingLeft="20sp"
                 android:text="Mecânico Autônomo"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:id="@+id/mechanic_radio"/>
 
             <RadioButton
                 android:layout_width="match_parent"
@@ -63,11 +85,30 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/type_select_layout_bg"
                 android:button="@drawable/radio_button_inset"
-                android:buttonTint="@color/cardview_light_background"
                 android:paddingLeft="20sp"
                 android:text="Estabelecimento de Mecânica"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:id="@+id/workshop_radio"/>
         </RadioGroup>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/default_dark_background_color"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="50dp"
+            android:text="Próximo"
+            android:backgroundTint="@color/default_button_color"
+            android:id="@+id/next_btn"/>
 
     </RelativeLayout>
 

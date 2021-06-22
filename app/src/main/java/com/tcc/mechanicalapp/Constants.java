@@ -3,12 +3,31 @@ package com.tcc.mechanicalapp;
 public class Constants {
 
     private static Constants instance = null;
+    private String userType = "";
+    private String userName = "";
+    private String workshopName = "";
+    private String userId = "";
+    private String serverAddress = "https://d211c57a947d.ngrok.io";
 
     public static Constants getInstance() {
         if (instance == null) {
             instance = new Constants();
         }
         return instance;
+    }
+
+    public String getServerAddress() {
+        return serverAddress;
+    }
+
+    public void setUserType(String type) {
+
+        userType = type;
+    }
+
+    public String getUserType() {
+
+        return userType;
     }
 
     public String getMapStyle() {
@@ -294,5 +313,29 @@ public class Constants {
                 "    ]\n" +
                 "  }\n" +
                 "]";
+    }
+
+    public String getWorkshopName() {
+        return workshopName;
+    }
+
+    public void setWorkshopName(String workshopName) {
+        this.workshopName = workshopName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getUserId() {
+        return userId;
     }
 }

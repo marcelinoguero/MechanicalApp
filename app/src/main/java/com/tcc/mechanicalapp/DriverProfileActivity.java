@@ -9,8 +9,9 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class DriverProfileActivity extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
 
@@ -28,8 +29,11 @@ public class DriverProfileActivity extends AppCompatActivity implements View.OnC
             actionBar.hide();
         }
 
-        ImageButton btn1 = findViewById(R.id.mapsBtn);
-        ImageButton btn2 = findViewById(R.id.exitBtn);
+        TextView userName = findViewById(R.id.driver_name);
+        userName.setText(Constants.getInstance().getUserName());
+
+        ImageButton btn1 = findViewById(R.id.driverMapsBtn);
+        ImageButton btn2 = findViewById(R.id.driverExitBtn);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn1.setOnTouchListener(this);
@@ -37,12 +41,14 @@ public class DriverProfileActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.mapsBtn) {
+        if (v.getId() == R.id.driverMapsBtn) {
             startActivityForResult(new Intent(DriverProfileActivity.this, DriverMapsActivity.class), 0);
         }
 
-        if (v.getId() == R.id.exitBtn) {
-            finishActivity(1);
+        if (v.getId() == R.id.driverExitBtn) {
+            Toast toast = Toast.makeText(this, "Logoff efetuado com sucesso", Toast.LENGTH_SHORT);
+            toast.show();
+            finish();
         }
     }
 

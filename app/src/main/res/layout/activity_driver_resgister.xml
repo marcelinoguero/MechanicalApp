@@ -3,22 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="?attr/fullscreenBackgroundColor"
     android:theme="@style/ThemeOverlay.MechanicalApp.FullscreenContainer"
-    tools:context=".DriverResgisterActivity">
+    tools:context=".DriverRegisterActivity">
 
     <RelativeLayout
         android:id="@+id/screen_header"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="#1A3330">
+        android:background="@color/default_dark_background_color">
 
-        <ImageView
+        <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/arrow_back_button" />
+            android:background="@drawable/arrow_back_button"
+            android:id="@+id/back_btn"
+            android:clickable="true"/>
 
         <ImageView
             android:id="@+id/user_icon"
@@ -26,7 +29,7 @@
             android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="60dp"
-            android:src="#000000" />
+            android:src="@drawable/user_icon" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,8 +46,10 @@
     <RelativeLayout
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
-        android:layout_height="490dp"
-        android:layout_below="@+id/screen_header">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/screen_header"
+        android:background="@color/default_card_background_color"
+        android:layout_above="@+id/screen_bottom">
 
         <RelativeLayout
             android:id="@+id/driver_credentials"
@@ -59,14 +64,16 @@
                 android:text="Nome"
                 android:textStyle="bold"
                 android:layout_marginBottom="-15dp"
-                android:layout_above="@+id/name"/>
+                android:layout_above="@+id/name"
+                android:textColor="@color/default_detail_color"/>
 
             <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="15dp"
-                android:hint="Marcelino Noguero de Souza" />
+                android:hint="Nome"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -74,16 +81,18 @@
                 android:text="E-mail"
                 android:textStyle="bold"
                 android:layout_marginBottom="-15dp"
-                android:layout_above="@+id/email"/>
+                android:layout_above="@+id/email"
+                android:textColor="@color/default_detail_color"/>
 
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_below="@id/phone_number"
+                android:layout_below="@id/name"
                 android:hint="email@email.com.br"
                 android:inputType="textEmailAddress"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -91,16 +100,18 @@
                 android:text="Senha"
                 android:textStyle="bold"
                 android:layout_marginBottom="-15dp"
-                android:layout_above="@+id/password"/>
+                android:layout_above="@+id/password"
+                android:textColor="@color/default_detail_color"/>
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_below="@id/email"
-                android:hint="Password"
+                android:hint="senha"
                 android:inputType="textPassword"
-                android:layout_marginTop="15dp"/>;
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"/>;
 
             <TextView
                 android:layout_width="wrap_content"
@@ -108,67 +119,61 @@
                 android:text="Confirmar Senha"
                 android:textStyle="bold"
                 android:layout_marginBottom="-15dp"
-                android:layout_above="@+id/password_confirmation"/>
+                android:layout_above="@+id/password_confirmation"
+                android:textColor="@color/default_detail_color"/>
 
             <EditText
                 android:id="@+id/password_confirmation"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_below="@id/password"
-                android:hint="Password"
+                android:hint="senha"
                 android:inputType="textPassword"
-                android:layout_marginTop="15dp"/>;
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"/>;
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Telefone Celular"
-                android:textStyle="bold"
-                android:layout_marginBottom="-15dp"
-                android:layout_above="@+id/phone_number"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Telefone Celular"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_marginBottom="-15dp"-->
+<!--                android:layout_above="@+id/phone_number"/>-->
 
-            <LinearLayout
-                android:id="@+id/phone_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/name"
-                android:layout_marginTop="15dp">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/phone_number"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/name"-->
+<!--                android:layout_marginTop="15dp">-->
 
-                <EditText
-                    android:layout_width="45dp"
-                    android:layout_height="40dp"
-                    android:hint="(XX)"
-                    android:inputType="phone" />
-
-                <EditText
-                    android:layout_width="70dp"
-                    android:layout_height="40dp"
-                    android:hint="XXXXX"
-                    android:inputType="phone" />
-
-                <EditText
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
-                    android:hint="XXXX"
-                    android:inputType="phone" />
-            </LinearLayout>;
+<!--                <br.com.sapereaude.maskedEditText.MaskedEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    app:allowed_chars="1234567"-->
+<!--                    app:mask="(##) ####X - ####"-->
+<!--                    android:hint="XXXXXXXXXX"/>-->
+<!--            </LinearLayout>;-->
 
         </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/main_layout"
-        android:background="#1A3330">
+        android:layout_height="100dp"
+        android:background="@color/default_dark_background_color"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/screen_bottom">
 
         <Button
+            android:id="@+id/complete_btn"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="50dp"
-            android:text="Próximo" />
+            android:text="Concluir"
+            android:backgroundTint="@color/default_button_color"/>
 
     </RelativeLayout>
 

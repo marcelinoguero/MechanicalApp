@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/default_dark_background_color"
     android:theme="@style/ThemeOverlay.MechanicalApp.FullscreenContainer"
-    tools:context=".DriverResgisterActivity" >
+    tools:context=".DriverRegisterActivity" >
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="match_parent"
@@ -88,7 +88,7 @@
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:elevation="12dp"
-            app:cardCornerRadius="80dp"
+            android:backgroundTint="@android:color/transparent"
             android:id="@+id/picture">
             <ImageView
                 android:layout_height="match_parent"
@@ -115,7 +115,8 @@
                 android:textStyle="bold"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF"
+                android:id="@+id/driver_name"/>
         </RelativeLayout>
     </RelativeLayout>
 
@@ -226,7 +227,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/exitBtn"
+        android:id="@+id/driverExitBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/logout_icon"
@@ -237,7 +238,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
     <ImageButton
-        android:id="@+id/mapsBtn"
+        android:id="@+id/driverMapsBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/map_icon"

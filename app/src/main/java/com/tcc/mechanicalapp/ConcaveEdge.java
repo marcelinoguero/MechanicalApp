@@ -1,14 +1,8 @@
 package com.tcc.mechanicalapp;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
-import androidx.core.util.LogWriter;
-
 import com.google.android.material.shape.EdgeTreatment;
 import com.google.android.material.shape.ShapePath;
-
-import java.util.logging.Logger;
 
 public class ConcaveEdge extends EdgeTreatment {
 
@@ -21,7 +15,6 @@ public class ConcaveEdge extends EdgeTreatment {
         float right = center + 100f;
         float bottom = 100f;
 
-        Log.d("DebugCenter", "Center: "+center);
         shapePath.addArc(left, top, right, bottom, -180f, -180f);
     }
 }

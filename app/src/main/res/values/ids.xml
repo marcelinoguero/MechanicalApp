@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="brand_id" type="id"/>
+    <item name="type_id" type="id"/>
+    <item name="photo_id" type="id"/>
+    <item name="call_id" type="id"/>
+    <item name="name_id" type="id"/>
+    <item name="rating_id" type="id"/>
+</resources>

@@ -1,7 +1,6 @@
 package com.tcc.mechanicalapp;
 
 import androidx.annotation.NonNull;
-
 import com.google.android.material.shape.CornerTreatment;
 import com.google.android.material.shape.ShapePath;
 

@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/default_dark_background_color"
     android:theme="@style/ThemeOverlay.MechanicalApp.FullscreenContainer"
-    tools:context=".DriverResgisterActivity">
+    tools:context=".DriverRegisterActivity">
 
 
     <ImageView
@@ -27,7 +27,7 @@
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:elevation="12dp"
-            app:cardCornerRadius="100dp"
+            android:backgroundTint="@android:color/transparent"
             android:id="@+id/picture">
             <ImageView
                 android:layout_height="match_parent"
@@ -54,7 +54,8 @@
                 android:textStyle="bold"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF"
+                android:id="@+id/workshop_name"/>
         </RelativeLayout>
     </RelativeLayout>
 
@@ -70,7 +71,7 @@
             android:layout_centerHorizontal="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardCornerRadius="50dp"
+            app:cardCornerRadius="30dp"
             android:backgroundTint="#636363"
             android:elevation="20dp">
         </androidx.cardview.widget.CardView>
@@ -186,6 +187,7 @@
     </LinearLayout>
 
     <ImageButton
+        android:id="@+id/workshopExitBtn"
         android:layout_margin="15dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -194,6 +196,7 @@
         android:layout_alignParentBottom="true"/>
 
     <ImageButton
+        android:id="@+id/workshopMapsBtn"
         android:layout_margin="15dp"
         android:layout_width="50dp"
         android:layout_height="50dp"

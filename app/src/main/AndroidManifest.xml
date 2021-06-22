@@ -2,6 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tcc.mechanicalapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <compatible-screens>
+        <screen
+            android:screenDensity="420"
+            android:screenSize="small" />
+    </compatible-screens>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,33 +21,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MechanicalApp">
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ChatActivity" />
         <activity android:name=".FreelanceMechanicProfileActivity" />
         <activity android:name=".MechanicWorkshopProfileActivity" />
         <activity android:name=".AssociatedMechanicProfileActivity" />
         <activity android:name=".DriverProfileActivity" />
         <activity android:name=".NavTestActivity" />
         <activity
-            android:name=".NavActivity"
-            android:label="@string/title_activity_nav"
-            android:theme="@style/Theme.MechanicalApp.NoActionBar" />
-        <activity
             android:name=".DriverMapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps">
+        </activity>
         <activity
-            android:name=".VehiclesListActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_cars_list"
-            android:theme="@style/Theme.MechanicalApp.Fullscreen" />
-        <activity
-            android:name=".DriverResgisterActivity"
+            android:name=".DriverRegisterActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="title_activity_driver_resgister"
-            android:theme="@style/Theme.MechanicalApp.Fullscreen" />
-        <activity
-            android:name=".VehicleRegisterActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="title_activity_vehicle_resgister"
             android:theme="@style/Theme.MechanicalApp.Fullscreen" />
         <activity
             android:name=".SelectUserTypeActivity"
@@ -53,27 +52,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".FullscreenActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MechanicalApp.Fullscreen" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
     </application>
-    <compatible-screens>
-        <screen
-            android:screenDensity="420"
-            android:screenSize="small" />
-    </compatible-screens>
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
 
 </manifest>

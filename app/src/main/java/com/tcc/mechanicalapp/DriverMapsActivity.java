@@ -1,47 +1,23 @@
 package com.tcc.mechanicalapp;
 
-import android.os.Build;
-
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
-
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdateFactory;
+import android.widget.ImageButton;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MapStyleOptions;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.card.MaterialCardView;
-
-import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import static java.lang.Thread.currentThread;
 
 public class DriverMapsActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener {
 
-    private GoogleMap mMap;
+    private MapManager mapManager;
+    private ProvidersListManager providersListManager;
+    private LocationManager locationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,27 +36,58 @@ public class DriverMapsActivity extends FragmentActivity implements OnMapReadyCa
         MaterialCardView card1 = findViewById(R.id.top_header);
         card.setShapeAppearanceModel(card.getShapeAppearanceModel().toBuilder().setTopEdge(new ConcaveEdge()).setAllCornerSizes(0).setTopLeftCornerSize(50).setTopRightCornerSize(50).build());
         card1.setShapeAppearanceModel(card1.getShapeAppearanceModel().toBuilder().setAllCornerSizes(0).setBottomLeftCornerSize(50).setBottomRightCornerSize(50).build());
+
+        ImageButton btn1 = findViewById(R.id.btnTeste);
+        ImageButton btn2 = findViewById(R.id.btnUpBottomSheet);
+        FloatingActionButton btn3 = findViewById(R.id.btnSearchProviders);
+        ImageButton btn5 = findViewById(R.id.btnFocusUser);
+        btn1.setOnClickListener(this);
+        btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
+        btn5.setOnClickListener(this);
+
+        providersListManager = new ProvidersListManager(this, this);
+        locationManager = new LocationManager(this,this);
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        mapManager = new MapManager(googleMap);
 
-        // LatLng sydney = new LatLng(-34, 151);
-        LatLng casa = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(casa).title("Home test"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(casa));
-
-        String dark_pattern = Constants.getInstance().getMapStyle();
-        MapStyleOptions dark_style = new MapStyleOptions(dark_pattern);
-        mMap.setMapStyle(dark_style);
-
+        new Thread(new Runnable() {
+            public void run(){
+                while (true) {
+                    locationManager.plotUserLocation(mapManager);
+                    try {
+                        currentThread().sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
     }
 
     @Override
     public void onClick(View v) {
+
+        if (v.getId() == R.id.btnSearchProviders) {
+            locationManager.requestNearbyProviders(mapManager, providersListManager);
+        }
+
         if (v.getId() == R.id.btnTeste) {
-            finishActivity(1);
+            finish();
+        }
+
+        if (v.getId() == R.id.btnUpBottomSheet) {
+        }
+
+        if (v.getId() == R.id.call_button) {
+            startActivityForResult(new Intent(DriverMapsActivity.this, ChatActivity.class), 0);
+        }
+
+        if (v.getId() == R.id.btnFocusUser) {
+            mapManager.focusCamera();
         }
     }
 }
