@@ -82,9 +82,9 @@ public class DriverMapsActivity extends FragmentActivity implements OnMapReadyCa
         if (v.getId() == R.id.btnUpBottomSheet) {
         }
 
-        if (v.getId() == R.id.call_button) {
-            startActivityForResult(new Intent(DriverMapsActivity.this, ChatActivity.class), 0);
-        }
+//        if (v.getId() == R.id.call_button) {
+//            startActivityForResult(new Intent(DriverMapsActivity.this, ChatActivity.class), 0);
+//        }
 
         if (v.getId() == R.id.btnFocusUser) {
             mapManager.focusCamera();

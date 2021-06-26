@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if (v.getId() == R.id.login_btn) {
 
-            EditText emailField = findViewById(R.id.email);
+            EditText emailField = findViewById(R.id.login);
             EditText passwordField = findViewById(R.id.password);
 
             String emailText = emailField.getText().toString();
@@ -93,22 +93,32 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     try {
                         JSONObject jsonObjectResponse = new JSONObject(new String(response));
 
+                        EditText text = findViewById(R.id.login);
+                        EditText password = findViewById(R.id.password);
+
+                        Constants.getInstance().setUserLogin(text.getText().toString());
+                        Constants.getInstance().setPassword(password.getText().toString());
+
                         if (jsonObjectResponse.getString("type").equals("driver")) {
                             Constants.getInstance().setUserName(jsonObjectResponse.getString("name"));
                             Constants.getInstance().setUserId(jsonObjectResponse.getString("id"));
+                            Constants.getInstance().setUserType("driver");
                             startActivityForResult(new Intent(LoginActivity.this, DriverProfileActivity.class),0);
                         } else if (jsonObjectResponse.getString("type").equals("associated_mechanic")) {
                             Constants.getInstance().setUserName(jsonObjectResponse.getString("name"));
                             Constants.getInstance().setUserId(jsonObjectResponse.getString("id"));
+                            Constants.getInstance().setUserType("associated_mechanic");
                             Constants.getInstance().setWorkshopName(jsonObjectResponse.getString("workshop_id"));
                             startActivityForResult(new Intent(LoginActivity.this, AssociatedMechanicProfileActivity.class),0);
                         } else if (jsonObjectResponse.getString("type").equals("freelancer_mechanic")) {
                             Constants.getInstance().setUserName(jsonObjectResponse.getString("name"));
                             Constants.getInstance().setUserId(jsonObjectResponse.getString("id"));
+                            Constants.getInstance().setUserType("freelancer_mechanic");
                             startActivityForResult(new Intent(LoginActivity.this, FreelanceMechanicProfileActivity.class),0);
                         } else if (jsonObjectResponse.getString("type").equals("mechanic_workshop")) {
                             Constants.getInstance().setUserName(jsonObjectResponse.getString("name"));
                             Constants.getInstance().setUserId(jsonObjectResponse.getString("id"));
+                            Constants.getInstance().setUserType("mechanic_workshop");
                             startActivityForResult(new Intent(LoginActivity.this, MechanicWorkshopProfileActivity.class),0);
                         }
 

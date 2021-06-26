@@ -37,6 +37,10 @@ public class DriverProfileActivity extends AppCompatActivity implements View.OnC
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn1.setOnTouchListener(this);
+
+        ImageButton btn3 = findViewById(R.id.configProfileBtn);
+        btn3.setOnClickListener(this);
+        btn3.setOnTouchListener(this);
     }
 
     @Override
@@ -49,6 +53,10 @@ public class DriverProfileActivity extends AppCompatActivity implements View.OnC
             Toast toast = Toast.makeText(this, "Logoff efetuado com sucesso", Toast.LENGTH_SHORT);
             toast.show();
             finish();
+        }
+
+        if (v.getId() == R.id.configProfileBtn) {
+            startActivityForResult(new Intent(DriverProfileActivity.this, EditProfileDataActivity.class), 1);
         }
     }
 

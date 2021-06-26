@@ -6,7 +6,7 @@ import com.google.android.material.shape.ShapePath;
 
 public class ConcaveEdge extends EdgeTreatment {
 
-    private float scale = NavActivity.scale;
+    private float scale = Constants.getInstance().getScale();
     @Override
     public void getEdgePath(float length, float center, float interpolation, @NonNull ShapePath shapePath) {
 

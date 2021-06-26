@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:theme="@style/ThemeOverlay.MechanicalApp.FullscreenContainer"
+    tools:context=".DriverRegisterActivity">
+
+    <RelativeLayout
+        android:id="@+id/screen_header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/default_dark_background_color">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/arrow_back_button"
+            android:id="@+id/back_btn"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="60dp"
+            android:src="@drawable/user_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/user_icon"
+            android:text="Edição de perfil"
+            android:textColor="#FFFF"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/screen_header"
+        android:background="@color/default_card_background_color"
+        android:layout_above="@+id/screen_bottom">
+
+        <RelativeLayout
+            android:id="@+id/driver_credentials"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="30dp">
+
+            <RelativeLayout
+                android:id="@+id/user_photo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/default_user_profile"
+                    android:id="@+id/photoView"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:clickable="true"
+                    android:src="@drawable/edit_image_icon"
+                    app:tint="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:backgroundTint="@color/default_button_color"
+                    app:backgroundTint="@color/white"
+                    android:focusable="true" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome"
+                android:textStyle="bold"
+                android:layout_marginBottom="-15dp"
+                android:layout_above="@+id/name"
+                android:textColor="@color/default_detail_color"/>
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:hint="Nome"
+                android:textColor="@color/white"
+                android:layout_below="@+id/user_photo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E-mail"
+                android:textStyle="bold"
+                android:layout_marginBottom="-15dp"
+                android:layout_above="@+id/login"
+                android:textColor="@color/default_detail_color"/>
+
+            <EditText
+                android:id="@+id/login"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/name"
+                android:hint="email@email.com.br"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/changePasswordBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/login"
+                android:layout_centerHorizontal="true"
+                android:text="Alterar Senha"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/default_detail_color"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/default_dark_background_color"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/screen_bottom">
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="50dp"
+            android:text="Salvar"
+            android:backgroundTint="@color/default_button_color"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

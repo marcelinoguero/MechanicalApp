@@ -21,6 +21,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MechanicalApp">
+        <activity android:name=".EditProfileDataActivity">
+        </activity>
         <activity android:name=".ChatActivity" />
         <activity android:name=".FreelanceMechanicProfileActivity" />
         <activity android:name=".MechanicWorkshopProfileActivity" />
@@ -29,8 +31,7 @@
         <activity android:name=".NavTestActivity" />
         <activity
             android:name=".DriverMapsActivity"
-            android:label="@string/title_activity_maps">
-        </activity>
+            android:label="@string/title_activity_maps" />
         <activity
             android:name=".DriverRegisterActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -51,6 +52,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
 
         <meta-data

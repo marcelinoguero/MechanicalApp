@@ -3,8 +3,11 @@ package com.tcc.mechanicalapp;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -19,7 +22,7 @@ import cz.msebera.android.httpclient.entity.StringEntity;
 
 import static java.lang.Thread.currentThread;
 
-public class FreelanceMechanicProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class FreelanceMechanicProfileActivity extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,15 @@ public class FreelanceMechanicProfileActivity extends AppCompatActivity implemen
 
         ImageButton btn1 = findViewById(R.id.freelancerExitBtn);
         btn1.setOnClickListener(this);
+        btn1.setOnTouchListener(this);
+
+        ImageButton btn2 = findViewById(R.id.freelancerMapsBtn);
+        btn2.setOnClickListener(this);
+        btn2.setOnTouchListener(this);
+
+        ImageButton btn3 = findViewById(R.id.configProfileBtn);
+        btn3.setOnClickListener(this);
+        btn3.setOnTouchListener(this);
 
         Context context = getApplicationContext();
 
@@ -105,8 +117,36 @@ public class FreelanceMechanicProfileActivity extends AppCompatActivity implemen
 
     @Override
     public void onClick(View v) {
-        Toast toast = Toast.makeText(this, "Logoff efetuado com sucesso", Toast.LENGTH_SHORT);
-        toast.show();
-        finish();
+        if (v.getId() == R.id.freelancerExitBtn) {
+            Toast toast = Toast.makeText(this, "Logoff efetuado com sucesso", Toast.LENGTH_SHORT);
+            toast.show();
+            finish();
+        }
+
+        if (v.getId() == R.id.freelancerMapsBtn) {
+            startActivityForResult(new Intent(FreelanceMechanicProfileActivity.this, DriverMapsActivity.class), 0);
+        }
+
+
+        if (v.getId() == R.id.configProfileBtn) {
+            startActivityForResult(new Intent(FreelanceMechanicProfileActivity.this, EditProfileDataActivity.class), 1);
+        }
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent motionEvent) {
+        switch (motionEvent.getAction()) {
+            case MotionEvent.ACTION_DOWN: {
+                v.getBackground().setColorFilter(0xe04eb5a9, PorterDuff.Mode.SRC_ATOP);
+                v.invalidate();
+                break;
+            }
+            case MotionEvent.ACTION_UP: {
+                v.getBackground().clearColorFilter();
+                v.invalidate();
+                break;
+            }
+        }
+        return false;
     }
 }

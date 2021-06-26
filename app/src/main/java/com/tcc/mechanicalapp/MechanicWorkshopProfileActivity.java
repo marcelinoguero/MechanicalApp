@@ -2,13 +2,18 @@ package com.tcc.mechanicalapp;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MechanicWorkshopProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class MechanicWorkshopProfileActivity extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +34,48 @@ public class MechanicWorkshopProfileActivity extends AppCompatActivity implement
 
         ImageButton btn1 = findViewById(R.id.workshopExitBtn);
         btn1.setOnClickListener(this);
+
+        ImageButton btn2 = findViewById(R.id.workshopMapsBtn);
+        btn2.setOnClickListener(this);
+        btn2.setOnTouchListener(this);
+
+        ImageButton btn3 = findViewById(R.id.configProfileBtn);
+        btn3.setOnClickListener(this);
+        btn3.setOnTouchListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        finish();
+        if (v.getId() == R.id.workshopExitBtn) {
+            Toast toast = Toast.makeText(this, "Logoff efetuado com sucesso", Toast.LENGTH_SHORT);
+            toast.show();
+            finish();
+        }
+
+        if (v.getId() == R.id.workshopMapsBtn) {
+            startActivityForResult(new Intent(MechanicWorkshopProfileActivity.this, DriverMapsActivity.class), 0);
+        }
+
+
+        if (v.getId() == R.id.configProfileBtn) {
+            startActivityForResult(new Intent(MechanicWorkshopProfileActivity.this, EditProfileDataActivity.class), 1);
+        }
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent motionEvent) {
+        switch (motionEvent.getAction()) {
+            case MotionEvent.ACTION_DOWN: {
+                v.getBackground().setColorFilter(0xe04eb5a9, PorterDuff.Mode.SRC_ATOP);
+                v.invalidate();
+                break;
+            }
+            case MotionEvent.ACTION_UP: {
+                v.getBackground().clearColorFilter();
+                v.invalidate();
+                break;
+            }
+        }
+        return false;
     }
 }

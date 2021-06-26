@@ -116,6 +116,7 @@
             android:layout_weight="1" >
 
             <ImageButton
+                android:id="@+id/configProfileBtn"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:background="@drawable/button_shape"
@@ -180,7 +181,7 @@
         android:layout_alignParentBottom="true" />
 
     <ImageButton
-        android:id="@+id/associatedMapsBtn"
+        android:id="@+id/freelancerMapsBtn"
         android:layout_margin="15dp"
         android:layout_width="50dp"
         android:layout_height="50dp"

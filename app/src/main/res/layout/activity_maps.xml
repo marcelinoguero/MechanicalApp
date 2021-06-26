@@ -58,5 +58,6 @@
         android:src="@drawable/search_services_icon"
         app:maxImageSize="35dp"
         app:tint="@color/default_detail_color"
-        android:backgroundTint="@color/default_button_color"/>
+        android:backgroundTint="@color/default_button_color"
+        android:focusable="true" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

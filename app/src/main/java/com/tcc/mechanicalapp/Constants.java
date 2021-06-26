@@ -4,15 +4,19 @@ public class Constants {
 
     private static Constants instance = null;
     private String userType = "";
-    private String userName = "";
-    private String workshopName = "";
     private String userId = "";
-    private String serverAddress = "https://d211c57a947d.ngrok.io";
+    private String userName = "";
+    private String userLogin = "";
+    private String workshopName = "";
+    private String password = "";
+    private final String serverAddress = "https://25c962050d45.ngrok.io";
+    private static float scale;
 
     public static Constants getInstance() {
         if (instance == null) {
             instance = new Constants();
         }
+
         return instance;
     }
 
@@ -28,6 +32,14 @@ public class Constants {
     public String getUserType() {
 
         return userType;
+    }
+
+    public void setScale(float newScale) {
+        scale = newScale;
+    }
+
+    public float getScale() {
+        return scale;
     }
 
     public String getMapStyle() {
@@ -337,5 +349,21 @@ public class Constants {
 
     public String getUserId() {
         return userId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUserLogin() {
+        return userLogin;
+    }
+
+    public void setUserLogin(String userLogin) {
+        this.userLogin = userLogin;
     }
 }
